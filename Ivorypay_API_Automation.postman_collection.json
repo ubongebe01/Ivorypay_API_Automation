@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "93f28c4a-775d-40bc-9d9f-beff7ccd96aa",
+		"name": "Ivorypay_API_Automation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21187153"
+	},
+	"item": [
+		{
+			"name": "Get Album with ID: Successful",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/*\r",
+							"Four Validations are done for request and they are;\r",
+							"1. response code\r",
+							"2. userId returned by the body\r",
+							"3. Id returned by the body\r",
+							"4. title returned by the body\r",
+							"\r",
+							" */\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var response = JSON.parse(responseBody);\r",
+							"tests[\"userId returned\"] = response[0].userId == 4;\r",
+							"tests[\"Id returned\"] = response[0].id == 34;\r",
+							"tests[\"title returned\"] = response[0].title ==  \"cumque voluptatibus rerum architecto blanditiis\";\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/albums?id=34",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"albums"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "34"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Posts: Successful",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var response = JSON.parse(responseBody);\r",
+							"tests[\"Title of First Post\"] = response[0].title == \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\";\r",
+							"tests[\"Title of Second Post\"] = response[1].title == \"qui est esse\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments: Successful",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var response = JSON.parse(responseBody);\r",
+							"tests[\"Email of First Commenter\"] = response[0].email == \"Eliseo@gardner.biz\";\r",
+							"tests[\"Email of Second ommenter\"] = response[1].email == \"Jayne_Kuhic@sydney.com\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/comments",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Albums: Successful",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var response = JSON.parse(responseBody);\r",
+							"tests[\"Title of First Album\"] = response[0].title == \"quidem molestiae enim\";\r",
+							"tests[\"Title of Second Album\"] = response[1].title == \"sunt qui excepturi placeat culpa\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/albums",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"albums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Photos: Successful",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var response = JSON.parse(responseBody);\r",
+							"tests[\"Title of First Photo\"] = response[0].title == \"accusamus beatae ad facilis cum similique qui sunt\";\r",
+							"tests[\"Title of Second Photo\"] = response[1].title == \"reprehenderit est deserunt velit ipsam\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/photos",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Todos: Successful",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var response = JSON.parse(responseBody);\r",
+							"tests[\"Title of First Todo\"] = response[0].title == \"delectus aut autem\";\r",
+							"tests[\"Title of Second Todo\"] = response[1].title == \"quis ut nam facilis et officia qui\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users: Successful",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var response = JSON.parse(responseBody);\r",
+							"tests[\"Username of First User\"] = response[0].username == \"Bret\";\r",
+							"tests[\"Username of Second User\"] = response[1].username == \"Antonette\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
